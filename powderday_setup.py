@@ -7,30 +7,24 @@ import numpy as np
 from subprocess import call
 import sys
 
-#===============================================
-#MODIFIABLE HEADER
-#===============================================
-
-start = sys.argv[1]
-end = sys.argv[2]
-z = sys.argv[3]
-
-
 nnodes=1
-startsnap = int(start)
-endsnap = int(end)
+
+
+#################
+# Edit these !!!
 snap_redshift = float(z)
-npzfile = '/orange/narayanan/s.lower/TNG/position_npzs/tng_snap'+str(start)+'_pos.npz' 
+npzfile = '/orange/narayanan/s.lower/TNG/position_npzs/tng_snap33_pos.npz' 
 model_dir_base = '/orange/narayanan/s.lower/TNG/pd_runs/'
 hydro_dir = '/orange/narayanan/s.lower/TNG/filtered_snapshots/'
-
-#if we want to write the files locally, but have the paths in the
-#parameters files lead to differnet paths (for a different computer),
-#put those paths here.  otherweise, set these equal to whatever is in
-#model_dir and hydro_dir
 hydro_dir_remote = hydro_dir
-
 model_run_name='TNG_m100'
+#################
+
+
+
+
+
+
 COSMOFLAG=0 #flag for setting if the gadget snapshots are broken up into multiples or not and follow a nomenclature snapshot_000.0.hdf5
 FILTERFLAG = 1 #flag for setting if the gadget snapshots are filtered or not, and follow a nomenclature snap305_galaxy1800_filtered.hdf5
 
@@ -52,7 +46,7 @@ ngalaxies = data['ngalaxies'][()]
 
 
 
-for snap in range(startsnap,endsnap):
+for snap in [snap_num]:
     
     model_dir = model_dir_base+'/snap{:03d}'.format(snap)
     model_dir_remote = model_dir
