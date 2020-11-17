@@ -12,7 +12,8 @@ nnodes=1
 
 #################
 # Edit these !!!
-snap_redshift = float(z)
+snap_redshift = float(2.0)
+snap_num = 33
 npzfile = '/orange/narayanan/s.lower/TNG/position_npzs/tng_snap33_pos.npz' 
 model_dir_base = '/orange/narayanan/s.lower/TNG/pd_runs/'
 hydro_dir = '/orange/narayanan/s.lower/TNG/filtered_snapshots/'
